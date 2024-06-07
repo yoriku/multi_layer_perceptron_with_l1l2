@@ -2,7 +2,21 @@
 L1，L2正則化項を追加した多層パーセプトロンの実装  
 Implementation of a multilayer perceptron with additional L1 and L2 regularization terms
 
-# APIs
+## Environments
+Windows10 + Python3.11.8 + CUDA v11.7  
+
+## Using Library
+~~~ cmd
+# Change command for your CUDA version
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu117
+pip install numpy
+pip install scikit-learn
+pip install matplotlib
+pip install seaborn
+pip install optuna
+===
+
+## APIs
 ~~~ python
 MLP(n_input, n_comp, n_output, batch_size=256, n_epoch=100, class_weight=None, lambda_l1=0.01, lambda_l2=0.01, seed=42)
 ~~~
