@@ -7,13 +7,21 @@ Implementation of a multilayer perceptron with additional L1 and L2 regularizati
 MLP(n_input, n_comp, n_output, batch_size=256, n_epoch=100, class_weight=None, lambda_l1=0.01, lambda_l2=0.01, seed=42)
 ~~~
 L1，L2及び中間層の数を事前に設定する多層パーセプトロン  
-class_weightには訓練データの目的変数のリストを入力  
+- n_input, n_comp, n_output : 入力変数の数，中間層のノード数，出力変数の数（目的変数の数）
+- class_weight : 目的変数のリストを入力するとsk-learnにおけるclass_weight=balancedと等価になる（e.g. class_weight=y_train）
+- lambda_l1, lambda_l2 : L1，L2正則化項の強さ（大きいほど強く制約する）
+- seed : 生命、宇宙、そして万物についての究極の疑問の答え
 
 ~~~ python
 AutoMLP(n_input, n_comp, n_output, batch_size=256, n_epoch=100, class_weight=None, trial_size=100, seed=42)
 ~~~
 TPEに基づき，L1，L2及び中間層の数を探索する多層パーセプトロン（n_compの値は何でもよい）  
-trial_sizeは何回数値を探索するかを表す．  
+
+- n_input, n_comp, n_output : 入力変数の数，中間層のノード数，出力変数の数（目的変数の数）
+- class_weight : 目的変数のリストを入力するとsk-learnにおけるclass_weight=balancedと等価になる（e.g. class_weight=y_train）
+- trial_size : L1，L2，中間層のノード数を探索する回数
+- seed : 生命、宇宙、そして万物についての究極の疑問の答え
+
 `if __name__ == "__main__":` のサンプルプログラム参照  
 
 ~~~ python
@@ -27,7 +35,6 @@ fit(X, y, verbose=False, val_X=None, val_y=None)
 
 return  
 - history : Dict型，各epochにおける損失関数と正答率と各層の重みを返す
-- 
 ~~~ python
 predict(X, y)
 ~~~
