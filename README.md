@@ -14,7 +14,7 @@ pip install scikit-learn
 pip install matplotlib
 pip install seaborn
 pip install optuna
-===
+~~~
 
 ## APIs
 ~~~ python
